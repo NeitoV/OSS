@@ -4,7 +4,7 @@ require ROOT . "/include/function.php";
 spl_autoload_register("loadClass");
 session_start();
 
-// $obj = new Product();
+ $obj = new Product();
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +77,7 @@ session_start();
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 <?php
-                // $obj->getRand();
+                $obj->getRand();
                 ?>
             </div>
         </div>
@@ -95,27 +95,27 @@ session_start();
 </body>
 
 <?php
-// if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
-//     if (isset($_GET['add_to_cart'])) {
+    if (isset($_GET['add_to_cart'])) {
 
-//         $product_id = $_GET['product_id'];
+        $product_id = $_GET['product_id'];
 
-//         if (isset($_SESSION)) {
-//             if (!isset($_SESSION['product_id'])) {
-//                 $_SESSION['product_id'][] = $product_id;
-//             } else {
-//                 if (!in_array($product_id, $_SESSION['product_id'])) {
-//                     $_SESSION['product_id'][] = $product_id;
-//                 }
-//             }
-//         } else {
-//             $_SESSION['product_id'][] = $product_id;
-//         }
+        if (isset($_SESSION)) {
+            if (!isset($_SESSION['product_id'])) {
+                $_SESSION['product_id'][] = $product_id;
+            } else {
+                if (!in_array($product_id, $_SESSION['product_id'])) {
+                    $_SESSION['product_id'][] = $product_id;
+                }
+            }
+        } else {
+            $_SESSION['product_id'][] = $product_id;
+        }
 
-//     }
+    }
 
-// }
+}
 ?>
 <?php
     // $db = new DB();
