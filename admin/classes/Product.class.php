@@ -48,7 +48,7 @@ class Product extends Db
                     echo '<tr>';
                     echo '<td>' . $product['id'] . '</td>';
                     echo '<td>' . $product['name'] . '</td>';
-                    echo '<td>' . number_format($product['price'], 0) . '</td>';
+                    echo '<td>' . number_format($product['price'], 0) . ' $</td>';
                     echo '<td>' . $product['stocks'] . '</td>';
                     echo '<td>' . $product['categories'] . '</td>';
                     echo '<td>' . $product['manufacturer'] . '</td>';
@@ -63,7 +63,7 @@ class Product extends Db
                 $tongSoTrang = ceil($totalItem / $tongSo1Trang);
 
                 // First page
-
+                if($tongSoTrang != 1){
                 if ($page) {
                     $first_page = 1;
                     echo "<a class = 'page-item num-page' href='index.php?url=" . $url . "&per_page=" . $tongSo1Trang . "&page=" . $first_page . "'>  First  </a> ";
@@ -85,7 +85,7 @@ class Product extends Db
                 if ($page == $tongSoTrang - $page) {
                     $last_page = $tongSoTrang;
                     echo "<a class = 'page-item num-page' href='index.php?url=" . $url . "&per_page=" . $tongSo1Trang . "&page=" . $last_page . "'>  Last  </a> ";
-                }
+                }}
                 echo "</div>";
             }
 
