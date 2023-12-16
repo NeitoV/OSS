@@ -58,9 +58,9 @@ session_start();
 
                     <!-- <li class="nav-item"><a class="nav-link" href="#">About</a></li> -->
                     <li class="nav-item"><a class="nav-link" href="index.php?url=product">Quản lý sản phẩm</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php?url=manufacturer">Quản lý xưởng</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="index.php?url=manufacturer">Quản lý xưởng</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.php?url=categories">Quản lý Loại</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php?url=order">Quản lý hóa đơn</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php?url=order">Quản lý hóa đơn</a></li> -->
 
 
                 </ul>
@@ -96,8 +96,8 @@ session_start();
     ?>
     <div class="container mt-5">
        <a class=" add-btn btn" href="add_product.php">+ Thêm sản phẩm</a> 
-       <a class=" add-btn btn" href="add_manufacturer.php">+ Thêm Xưởng</a> 
-       <a class=" add-btn btn" href="add_category.php">+ Thêm Loại</a> 
+       <!-- <a class=" add-btn btn" href="add_manufacturer.php">+ Thêm Xưởng</a> 
+       <a class=" add-btn btn" href="add_category.php">+ Thêm Loại</a>  -->
      
             <tbody>
                 <?php
