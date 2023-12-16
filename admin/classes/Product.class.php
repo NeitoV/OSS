@@ -44,7 +44,7 @@ class Product extends Db
                 $productList = $db->select($sql_product);
 
                 echo "<tbody>";
-                foreach ($productList as $product){
+                foreach ($productList as $product) {
                     echo '<tr>';
                     echo '<td>' . $product['id'] . '</td>';
                     echo '<td>' . $product['name'] . '</td>';
@@ -61,34 +61,35 @@ class Product extends Db
                 echo "<div>";
 
                 $tongSoTrang = ceil($totalItem / $tongSo1Trang);
-
-                // First page
-                if($tongSoTrang != 1){
-                if ($page) {
-                    $first_page = 1;
-                    echo "<a class = 'page-item num-page' href='index.php?url=" . $url . "&per_page=" . $tongSo1Trang . "&page=" . $first_page . "'>  First  </a> ";
-                }
-
-                //pages
-
-                for ($i = 1; $i <= $tongSoTrang; $i++) {
-                    if ($i != $page) {
-                        if ($i > $page - 2 && $i < $page + 2) {
-                            echo "<a class = 'page-item num-page' href='index.php?url=" . $url . "&per_page=" . $tongSo1Trang . "&page=" . $i . "'>" . $i . "</a> ";
+                if ($tongSoTrang != 1) {
+                    // First page
+                    if ($tongSoTrang != 1) {
+                        if ($page) {
+                            $first_page = 1;
+                            echo "<a class = 'page-item num-page' href='index.php?url=" . $url . "&per_page=" . $tongSo1Trang . "&page=" . $first_page . "'>  First  </a> ";
                         }
-                    } else {
-                        echo "<strong class ='current-page page-item btn'>$i </strong>";
+
+                        //pages
+
+                        for ($i = 1; $i <= $tongSoTrang; $i++) {
+                            if ($i != $page) {
+                                if ($i > $page - 2 && $i < $page + 2) {
+                                    echo "<a class = 'page-item num-page' href='index.php?url=" . $url . "&per_page=" . $tongSo1Trang . "&page=" . $i . "'>" . $i . "</a> ";
+                                }
+                            } else {
+                                echo "<strong class ='current-page page-item btn'>$i </strong>";
+                            }
+                        }
+
+                        //Last Page
+                        if ($page == $tongSoTrang - $page) {
+                            $last_page = $tongSoTrang;
+                            echo "<a class = 'page-item num-page' href='index.php?url=" . $url . "&per_page=" . $tongSo1Trang . "&page=" . $last_page . "'>  Last  </a> ";
+                        }
                     }
                 }
-
-                //Last Page
-                if ($page == $tongSoTrang - $page) {
-                    $last_page = $tongSoTrang;
-                    echo "<a class = 'page-item num-page' href='index.php?url=" . $url . "&per_page=" . $tongSo1Trang . "&page=" . $last_page . "'>  Last  </a> ";
-                }}
                 echo "</div>";
             }
-
         }
     }
 }
