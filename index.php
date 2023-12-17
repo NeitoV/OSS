@@ -55,8 +55,13 @@ session_start();
                     Cart
                     <span class="badge bg-dark text-white ms-1 rounded-pill">
                         <?php
-                        $count = isset($_SESSION['product_id']) ? count($_SESSION['product_id']) : 0;
-                        echo $count;
+                               $count = isset($_SESSION['product_id']) ? count($_SESSION['product_id']) : 0;
+                               echo $count;
+                         if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                            if (isset($_GET['add_to_cart'])) {
+                                header("Location: index.php");
+                            }
+                        }
                         ?>
                     </span>
                 </a>
