@@ -56,8 +56,6 @@ $obj = new Product();
                           echo $count;
                          if ($_SERVER["REQUEST_METHOD"] == "GET") {
                             if (isset($_GET['add_to_cart'])) {
-                     
-                                echo $count;
                                 header("Location: show_all_product.php");
                             }
                         }
@@ -175,7 +173,7 @@ $obj = new Product();
                     $queryParams['page'] = $i;
                     $queryString = http_build_query($queryParams);
 
-                    echo '<li class="page-item"><a class="page-link" href="http://localhost/PHP_DoAn/shopping/show_all_product.php?' . $queryString . '">' . $i . '</a></li>';
+                    echo '<li class="page-item"><a class="page-link" href="show_all_product.php?' . $queryString . '">' . $i . '</a></li>';
                 }
 
                 echo '</ul>

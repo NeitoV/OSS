@@ -59,8 +59,6 @@ session_start();
                                echo $count;
                          if ($_SERVER["REQUEST_METHOD"] == "GET") {
                             if (isset($_GET['add_to_cart'])) {
-                                $count = isset($_SESSION['product_id']) ? count($_SESSION['product_id']) : 0;
-                                echo $count;
                                 header("Location: index.php");
                             }
                         }
