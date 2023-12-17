@@ -97,7 +97,7 @@ session_start();
     <div class="container mt-5">
        <a class=" add-btn btn" href="add_product.php">+ Thêm sản phẩm</a> 
        <!-- <a class=" add-btn btn" href="add_manufacturer.php">+ Thêm Xưởng</a> 
-       <a class=" add-btn btn" href="add_category.php">+ Thêm Loại</a>  -->
+       <a class=" add-btn btn" href="add_category.php">+ Thêm Loại</a>   -->
      
             <tbody>
                 <?php
